@@ -34,7 +34,7 @@ class Prism(nn.Module):
         :param x: an [N x T x C] Tensor, where C is the number of features,
                   T is the number of timesteps, and N is the batch size.
         """
-        n, t, c = x.shape
+        n, t, _c = x.shape
         assert t == self.num_samples
 
         x = x.permute(2, 0, 1).contiguous()  # put C on the outer dimension
